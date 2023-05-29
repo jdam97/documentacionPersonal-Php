@@ -1,14 +1,33 @@
 <?php 
-//Punto 6: Funciones de salida en Php
-    echo 'Hola Mundo!';
+//Punto 7: Variables y constantes
 
-    // printf(): Esta función es similar a echo(), pero solo puede imprimir una cadena de texto a la vez
-    $texto = 'Mundo';
-    printf('Hola %s',$texto);
+ //Declarar una variable numérica
+ $edad = 25;
+ 
+ //Declarar un string
 
-    //sprintf(): Esta función es similar a printf(), pero en lugar de imprimir la cadena formateada en la salida estándar, devuelve la cadena formateada como resultado.
-    $mensaje = sprintf('Hola %s', $texto);
-    echo $mensaje;
-//
-   
+ $nombre = 'Jonathan';
+
+ //Declarar un boolean
+ $es_valido = true;
+
+ echo $edad;
+ echo $nombre;
+ echo $es_valido;
+  
+
+//Declarar una constante numérica
+
+define('PI',3.1416);
+
+//Declarar una constante string
+
+define('SALUDO','hola soy jonathan');
+
+//Declarar una constante booleana
+define('ES_VALIDO',true); 
+
+echo PI;
+echo SALUDO;
+echo ES_VALIDO;
 ?>
