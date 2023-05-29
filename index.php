@@ -1,33 +1,26 @@
 <?php 
-//Punto 7: Variables y constantes
+//Punto 8: Tipos de datos
 
- //Declarar una variable numérica
- $edad = 25;
- 
- //Declarar un string
+//Boolean
+$logueado = true;
+var_dump($logueado);
 
- $nombre = 'Jonathan';
+//Enteros
+$numero = 100;
+var_dump($numero);
 
- //Declarar un boolean
- $es_valido = true;
+//Floats
+$precio = 1.5;
+var_dump($precio);
 
- echo $edad;
- echo $nombre;
- echo $es_valido;
-  
+//Strings
 
-//Declarar una constante numérica
+$apellido = 'Alvarez';
+var_dump($apellido);
 
-define('PI',3.1416);
+//Arreglos
 
-//Declarar una constante string
+$array = [];
+var_dump($array);
 
-define('SALUDO','hola soy jonathan');
-
-//Declarar una constante booleana
-define('ES_VALIDO',true); 
-
-echo PI;
-echo SALUDO;
-echo ES_VALIDO;
 ?>
