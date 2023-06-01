@@ -1,26 +1,31 @@
-<?php 
-//Punto 8: Tipos de datos
-
-//Boolean
-$logueado = true;
-var_dump($logueado);
-
-//Enteros
-$numero = 100;
-var_dump($numero);
-
-//Floats
-$precio = 1.5;
-var_dump($precio);
-
-//Strings
-
-$apellido = 'Alvarez';
-var_dump($apellido);
-
-//Arreglos
-
-$array = [];
-var_dump($array);
-
+<?php
+    
+//Punto 9. Numeros y operadores
+// PHP posee una serie de operadores lógicos, de comparación que nos permiten realizar operaciones básicas y complejas
+    
+    // Aritmeticos:
+    //     + , - , * , / , % , ** 
+    // Asignacion:  
+    //     '='
+        
+        
+        
+    // Array operator
+    //     +  Union
+    //     == Equality
+    //     === Identity
+    //     != Inequality
+    //     <> Inequality
+    //     !== non Identity
+        
+        
+        
+    // Bit wise operator
+    //     & and
+    //     ^ xor
+    //     | not
+    //     << shift left 
+    //     >> shift right
+        
+        
 ?>
