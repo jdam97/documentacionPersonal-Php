@@ -1,76 +1,104 @@
 <?php
-//12.Estructuras de control
+//13.Funciones
 
 /**
- * todo Punto 12 Estructuras de control 
- * *controlan el flujo de ejecución del programa
- * *1.condicionales
- * *2.repetitivas
- * *3.excepciones
+ * todo Punto 13 Funciones
+ * *Funciones definidas por el usuario
+ * *son bloques de código que se pueden llamar y ejecutar en cualquier parte de un programa para realizar una tarea específica.
+ * 
  */
 
 /**
- * todo Estructuras condicionales
- * *IF
- * *permite tomar decisiones en función de si cumple o no una determinada condición.
+ * todo Punto 13 Funciones
+ * *Funciones que no retornan valor
+ * *en programación las funciones que no retornan ningun valor se denominan función "void". en PHP podemos definir una funcion void usando la palabra clave VOID en lugar de especificar un tipo de retorno.
+ * 
  */
 
-//Ejemplo
-$edad = 15;
-if($edad < 18){
-    echo "Menor de edad";
+ //ejemplo
+
+ declare (strict_types=1);
+
+ function sumar (int $numero1 = 0, array $numero2):void{
+    echo $numero1 + $numero2;
+ };
+
+ sumar(10,[]);
+
+/**
+ * todo Punto 13 Funciones
+ * *Funciones que retornan valor
+ * *en Php se pueden definir funciones que permiten recordar un valor al momento de finalizar la ejecución de todas las expresiones que se encuentran en su cuerpo principal, osea que retorna.
+ * 
+ */
+
+function usuarioAutenticado(bool $autenticado) : ? string{
+    if($autenticado){
+        return "el usuario está autenticado";
+    } 
+    else{
+        return null;
+    }
+
+}
+$usuario = usuarioAutenticado(false);
+
+echo $usuario;
+
+/**
+ * *Funciones por variable
+ */
+$fn = function(){
+    return true;
 };
 
+echo $fn(); 
+
 /**
- * todo Estructuras condicionales
- * *Switch
- * *permite ejecutar diferentes bloques de código dependiendo del valor de una variable.
+ * *Funciones con use()
  */
 
- //Ejemplo
- $edad = 20;
-switch ($edad) {
-    case '<18':
-        echo "menor de edad";
-        break;
-    
-    case '>18':
-        echo "mayor de edad";
-        break;
-}
-/**
- * todo Estructuras Repetitivas
- * *While
- * *permiten repetir la ejecución de un bloque de código mientras se cumpla una condición.
- */
-//Ejemplo
-$numero=3;
- while ($numero != 1) {
-    echo $numero;
-    $numero--;
- }
+$nombre = "jonathan";
+$fn = function () use($nombre){
+    return $nombre;
+};
 
- /**
- * todo Estructuras Repetitivas
- * *Do-while
- * *similar al while pero garantiza que el el bloque de código se ejecuta al menos una vez, esto independientemente si se cumple o no la condición.
- */
-//Ejemplo
-$numero1=1;
- do {
-    echo "hola";
- } while ($numero1 != 1);
+echo $fn();
 
 
 /**
- * todo Estructuras Repetitivas
- * *For
- * *Permite la ejecución de un bloque de código un número fijo de veces, controlando el número de iteraciones mediante un contador.
+ * * obtener parametros sin pasarlos
  */
-//Ejemplo
-$numero = 1;
-for ($i=1; $i <10 ; $i++) { 
-    echo $numero;
-}
+
+ function datos(){
+    print_r(func_get_args());
+
+ };
+ datos("Jonathan",23,true);
+
+/**
+ * *Funcion cosas que miguel dijo que estaba dificil
+* *func_get_args() and func_get_arg()
+*/
+
+function datos1():void{
+    print_r(...func_get_args());
+};
+
+datos1(["nombre"=>"Camilo", "edad"=> 23, "vida"=> true]);
+
+
+/**
+ * *extraer datos con ... y extract para arrays asociativos
+ * 
+ */
+
+ function datos2(){
+    extract(...func_get_args());
+    echo $nombre;
+    echo $edad;
+    echo $casa;
+};
+datos2(["nombre"=> "Jonathan","edad"=> 23,"casa"=> true]);
 
  ?>
