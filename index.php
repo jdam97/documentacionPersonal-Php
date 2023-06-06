@@ -1,31 +1,76 @@
 <?php
-//11.Métodos arrays
+//12.Estructuras de control
 
 /**
- * ? Punto 11 isset() y empty()
+ * todo Punto 12 Estructuras de control 
+ * *controlan el flujo de ejecución del programa
+ * *1.condicionales
+ * *2.repetitivas
+ * *3.excepciones
  */
 
 /**
- * todo: funcion isset()
- * *Es una funcion que verifica si una variable esta definida y si tiene valor definido no null.
+ * todo Estructuras condicionales
+ * *IF
+ * *permite tomar decisiones en función de si cumple o no una determinada condición.
  */
 
-$var = "nose php es aburrido";
-if (isset($var)){
-    echo "$var esta definida";
-}else{
-     echo "$var no esta definida";
+//Ejemplo
+$edad = 15;
+if($edad < 18){
+    echo "Menor de edad";
 };
 
 /**
- * todo: funcion empty()
- * *comprueba si una variable o un elemento esta vacio.
+ * todo Estructuras condicionales
+ * *Switch
+ * *permite ejecutar diferentes bloques de código dependiendo del valor de una variable.
  */
-$coso;
-if(empty($coso)){
-    echo "la variable no esta definida o no tiene valor";
-} else {
-    echo "la variable esta definida";
+
+ //Ejemplo
+ $edad = 20;
+switch ($edad) {
+    case '<18':
+        echo "menor de edad";
+        break;
+    
+    case '>18':
+        echo "mayor de edad";
+        break;
+}
+/**
+ * todo Estructuras Repetitivas
+ * *While
+ * *permiten repetir la ejecución de un bloque de código mientras se cumpla una condición.
+ */
+//Ejemplo
+$numero=3;
+ while ($numero != 1) {
+    echo $numero;
+    $numero--;
+ }
+
+ /**
+ * todo Estructuras Repetitivas
+ * *Do-while
+ * *similar al while pero garantiza que el el bloque de código se ejecuta al menos una vez, esto independientemente si se cumple o no la condición.
+ */
+//Ejemplo
+$numero1=1;
+ do {
+    echo "hola";
+ } while ($numero1 != 1);
+
+
+/**
+ * todo Estructuras Repetitivas
+ * *For
+ * *Permite la ejecución de un bloque de código un número fijo de veces, controlando el número de iteraciones mediante un contador.
+ */
+//Ejemplo
+$numero = 1;
+for ($i=1; $i <10 ; $i++) { 
+    echo $numero;
 }
 
-?>
+ ?>
