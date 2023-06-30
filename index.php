@@ -1,5 +1,7 @@
 <?php
-//-----------Herencia POO------------
+/*
+ * Herencia POO
+ */
 
 class Transporte
 {
