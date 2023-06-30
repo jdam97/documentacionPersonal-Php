@@ -1,30 +1,42 @@
 <?php
 /**
- * todo Interfaces PHP
+ * *Polimorfismo
  */
-
- interface Figura
+ interface TransporteInterfaz
  {
-     public function calcularArea();
+     public function getInfo(): string;
+     public function getRuedas(): int;
  }
- interface Figura3D extends Figura
+ class Transporte implements TransporteInterfaz
  {
-     public function calcularVolumen();
- }
- class Cubo implements Figura3D
- {
-     public function __construct(private int $lado)
+     public function __construct(protected int $ruedas, protected int $capacidad)
      {
      }
-     public function calcularArea()
+     public function getInfo(): string
      {
-         return 6 * pow($this->lado, 2);
+         return "El transporte cuenta con " . $this->ruedas . " ruedas y tiene una capacidad de " . $this->capacidad . " personas.";
      }
-     public function calcularVolumen()
+     public function getRuedas(): int
      {
-         return pow($this->lado, 3);
+         return $this->ruedas;
      }
  }
- $cubo = new Cubo(3);
- echo $cubo->calcularArea();
- echo $cubo->calcularVolumen();
+ class Automovil extends Transporte implements TransporteInterfaz
+ {
+     public function __construct(protected int $ruedas, protected int $capacidad, protected string $color)
+     {
+     }
+     public function getInfo(): string
+     {
+         return "El auto cuenta con " . $this->ruedas . " ruedas y tiene una capacidad de " . $this->capacidad . " personas. Aparte es de color " . $this->color;
+     }
+     public function getColor()
+     {
+         return "El color es: " . $this->color;
+     }
+ }
+ $transporte = new Transporte(8, 20);
+ $bmw = new Automovil(4, 5, "Negro");
+ echo $transporte->getInfo();
+ echo $bmw->getInfo();
+ echo $bmw->getColor();
